@@ -24,3 +24,17 @@ function createTable(sightings) {
         });
     });
 };
+
+// work on filtering for table by the entered date
+function filterTable() {
+
+    // stop reload
+    d3.event.presentDefault();
+
+    // create variable for storing input date 
+    var storeDate = d3.select("#datetime");
+    var storeValue = storeDate.property("value");
+
+    //set variable to set a copy for data filtering
+    var filterData = filterTable;
+}
