@@ -38,5 +38,18 @@ function filterTable() {
     //set variable to set a copy for data filtering
     var filterData = filterTable;
 
-    
+    // do conditional statement to reset page when clicked button 
+    if (inputValue != "") {
+        var filterData = tableData.filer(function(sightingRow) {
+
+            // need a conditional statement by using a boolean, to display table row
+            if (inputValue === sightingRow.datetime) {
+                return true;
+            }
+        })
+    }
+buildTable(filterTable);
+
+// use d3 to display table function on webpage
+var pageBody = d3.select("tbody");
 }
