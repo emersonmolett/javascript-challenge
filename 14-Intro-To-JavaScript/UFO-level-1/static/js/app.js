@@ -37,4 +37,6 @@ function filterTable() {
 
     //set variable to set a copy for data filtering
     var filterData = filterTable;
+
+    
 }
