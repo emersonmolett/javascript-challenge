@@ -58,4 +58,9 @@ buildTable(tableData);
 
 // allow filter table button to be referenced by variable & be input
 var filterButton = d2.select("#filter-btn");
-var dataEnter = d3.select("#datetime"); 
+var dataEnter = d3.select("#datetime");
+
+// allow for either enter or filter table to be used
+filterButton.on("click", filterTable);
+formEnter.on("submit", filterTable);
+
