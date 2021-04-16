@@ -53,3 +53,9 @@ buildTable(filterTable);
 // use d3 to display table function on webpage
 var pageBody = d3.select("tbody");
 }
+// call function
+buildTable(tableData);
+
+// allow filter table button to be referenced by variable & be input
+var filterButton = d2.select("#filter-btn");
+var dataEnter = d3.select("#datetime"); 
