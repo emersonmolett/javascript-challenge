@@ -32,24 +32,52 @@ function filterTable() {
 
     // stop reload
     // d3.event.presentDefault();
-
+    // var userInputs = [];
     // create variable for storing input date 
-    var storeDate = d3.select("#datetime");
-    var storeValue = storeDate.property("value");
-
+    // var storeValue = d3.selectAll(".form-control")
+    var dateValue = d3.select("#datetime").property("value")
+    var dateValue = d3.select("#city").property("value")
+    var dateValue = d3.select("#state").property("value")
+    var dateValue = d3.select("#country").property("value")
+    var dateValue = d3.select("#shape").property("value")
+    // console.log(storeValue)
+    // storeValue.forEach(userInput =>{
+    //    // userInputs.push(userInput)
+    //    console.log(userInput[0])
+    // })
+    // console.log(userInputs)
     //set variable to set a copy for data filtering
-    var filterData = filterTable;
+    var filterData = tableData;
 
     // do conditional statement to reset page when clicked button 
-    if (storeValue != "") {
+    if (dateValue != "") {
         var filterData = tableData.filter(function (sightingRow) {
-
             // need a conditional statement by using a boolean, to display table row
-            if (storeValue === sightingRow.datetime) {
-                return true;
-            }
-        })
+            if (dateValue === sightingRow.datetime) {  return true; } })
     }
+
+    if (dateValue != "") {
+        var filterData = tableData.filter(function (sightingRow) {
+            // need a conditional statement by using a boolean, to display table row
+            if (dateValue === sightingRow.city) {  return true; } })
+    }
+
+    if (dateValue != "") {
+        var filterData = tableData.filter(function (sightingRow) {
+            // need a conditional statement by using a boolean, to display table row
+            if (dateValue === sightingRow.state) {  return true; } })
+    }
+    if (dateValue != "") {
+        var filterData = tableData.filter(function (sightingRow) {
+            // need a conditional statement by using a boolean, to display table row
+            if (dateValue === sightingRow.country) {  return true; } })
+    }
+    if (dateValue != "") {
+        var filterData = tableData.filter(function (sightingRow) {
+            // need a conditional statement by using a boolean, to display table row
+            if (dateValue === sightingRow.shape) {  return true; } })
+    }
+
     createTable(filterData);
 
 
