@@ -51,31 +51,36 @@ function filterTable() {
 
     // do conditional statement to reset page when clicked button 
     if (dateValue != "") {
-         filterData = filterData.filter(function (sightingRow) {
+        filterData = filterData.filter(function (sightingRow) {
             // need a conditional statement by using a boolean, to display table row
-            if (dateValue === sightingRow.datetime) {  return true; } })
+            if (dateValue === sightingRow.datetime) { return true; }
+        })
     }
 
     if (cityValue != "") {
-         filterData = filterData.filter(function (sightingRow) {
+        filterData = filterData.filter(function (sightingRow) {
             // need a conditional statement by using a boolean, to display table row
-            if (cityValue === sightingRow.city) {  return true; } })
+            if (cityValue === sightingRow.city) { return true; }
+        })
     }
 
     if (stateValue != "") {
         filterData = filterData.filter(function (sightingRow) {
             // need a conditional statement by using a boolean, to display table row
-            if (stateValue === sightingRow.state) {  return true; } })
+            if (stateValue === sightingRow.state) { return true; }
+        })
     }
     if (countryValue != "") {
         filterData = filterData.filter(function (sightingRow) {
             // need a conditional statement by using a boolean, to display table row
-            if (countryValue === sightingRow.country) {  return true; } })
+            if (countryValue === sightingRow.country) { return true; }
+        })
     }
     if (shapeValue != "") {
         filterData = filterData.filter(function (sightingRow) {
             // need a conditional statement by using a boolean, to display table row
-            if (shapeValue === sightingRow.shape) {  return true; } })
+            if (shapeValue === sightingRow.shape) { return true; }
+        })
     }
 
     createTable(filterData);
