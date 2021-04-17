@@ -36,10 +36,10 @@ function filterTable() {
     // create variable for storing input date 
     // var storeValue = d3.selectAll(".form-control")
     var dateValue = d3.select("#datetime").property("value")
-    var dateValue = d3.select("#city").property("value")
-    var dateValue = d3.select("#state").property("value")
-    var dateValue = d3.select("#country").property("value")
-    var dateValue = d3.select("#shape").property("value")
+    var cityValue = d3.select("#city").property("value")
+    var stateValue = d3.select("#state").property("value")
+    var countryValue = d3.select("#country").property("value")
+    var shapeValue = d3.select("#shape").property("value")
     // console.log(storeValue)
     // storeValue.forEach(userInput =>{
     //    // userInputs.push(userInput)
@@ -51,31 +51,31 @@ function filterTable() {
 
     // do conditional statement to reset page when clicked button 
     if (dateValue != "") {
-        var filterData = tableData.filter(function (sightingRow) {
+         filterData = filterData.filter(function (sightingRow) {
             // need a conditional statement by using a boolean, to display table row
             if (dateValue === sightingRow.datetime) {  return true; } })
     }
 
-    if (dateValue != "") {
-        var filterData = tableData.filter(function (sightingRow) {
+    if (cityValue != "") {
+         filterData = filterData.filter(function (sightingRow) {
             // need a conditional statement by using a boolean, to display table row
-            if (dateValue === sightingRow.city) {  return true; } })
+            if (cityValue === sightingRow.city) {  return true; } })
     }
 
-    if (dateValue != "") {
-        var filterData = tableData.filter(function (sightingRow) {
+    if (stateValue != "") {
+        filterData = filterData.filter(function (sightingRow) {
             // need a conditional statement by using a boolean, to display table row
-            if (dateValue === sightingRow.state) {  return true; } })
+            if (stateValue === sightingRow.state) {  return true; } })
     }
-    if (dateValue != "") {
-        var filterData = tableData.filter(function (sightingRow) {
+    if (countryValue != "") {
+        filterData = filterData.filter(function (sightingRow) {
             // need a conditional statement by using a boolean, to display table row
-            if (dateValue === sightingRow.country) {  return true; } })
+            if (countryValue === sightingRow.country) {  return true; } })
     }
-    if (dateValue != "") {
-        var filterData = tableData.filter(function (sightingRow) {
+    if (shapeValue != "") {
+        filterData = filterData.filter(function (sightingRow) {
             // need a conditional statement by using a boolean, to display table row
-            if (dateValue === sightingRow.shape) {  return true; } })
+            if (shapeValue === sightingRow.shape) {  return true; } })
     }
 
     createTable(filterData);
