@@ -92,11 +92,11 @@ function filterTable() {
 // call function
 createTable(tableData);
 
-// allow filter table button to be referenced by variable & be input
+// can filter by inputing a date & selecting filter table
 var filterButton = d3.select("#filter-btn");
-var dataEnter = d3.select("#datetime");
+var dataEnter = d3.select("form-control");
 
-// allow for either enter or filter table to be used
+// when enter is clicked, table resets
 filterButton.on("click", filterTable);
 dataEnter.on("submit", filterTable);
 
