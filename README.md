@@ -1,1 +1,1 @@
-# javascript-challenge
+For this assignment, an interactive dashboard was created using JavaScript, HTML, and CSS, and D3.js on a web page. Two web pages were created. The first, allows for searching based on a date entered. The second, allows for searching based on date, along with city, state, country, and shape. 
