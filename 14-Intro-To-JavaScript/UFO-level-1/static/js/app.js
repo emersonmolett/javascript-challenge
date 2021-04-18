@@ -1,10 +1,12 @@
+// worked on dedugging code and sytax with tutor
+
 // from data.js
 var tableData = data;
 
 // YOUR CODE HERE!
 function createTable(sightings) {
     // use d3 to display table function on webpage
-    var tableBody = d3.select("tbody");
+
     tableBody.html("");
 
     // go through objects
@@ -30,64 +32,30 @@ function createTable(sightings) {
 // work on filtering for table by the entered date
 function filterTable() {
 
-    // stop reload
-    // d3.event.presentDefault();
-    // var userInputs = [];
-    // create variable for storing input date 
-    // var storeValue = d3.selectAll(".form-control")
-    var dateValue = d3.select("#datetime").property("value")
-    var cityValue = d3.select("#city").property("value")
-    var stateValue = d3.select("#state").property("value")
-    var countryValue = d3.select("#country").property("value")
-    var shapeValue = d3.select("#shape").property("value")
-    // console.log(storeValue)
-    // storeValue.forEach(userInput =>{
-    //    // userInputs.push(userInput)
-    //    console.log(userInput[0])
-    // })
-    // console.log(userInputs)
-    //set variable to set a copy for data filtering
+    d3.event.preventDefault();
+
+    var inputDate = d3.select("#datetime");
+    var inputValue = inputDate.property("value")
+
     var filterData = tableData;
 
-    // do conditional statement to reset page when clicked button 
-    if (dateValue != "") {
-        filterData = filterData.filter(function (sightingRow) {
+    if (inputValue != "") {
+        var filterData = tableData.filter(function (sightingRow) {
             // need a conditional statement by using a boolean, to display table row
-            if (dateValue === sightingRow.datetime) { return true; }
-        })
-    }
+            if (inputValue === sightingRow.datetime) {
 
-    if (cityValue != "") {
-        filterData = filterData.filter(function (sightingRow) {
-            // need a conditional statement by using a boolean, to display table row
-            if (cityValue === sightingRow.city) { return true; }
-        })
-    }
+                return true;
+            }
+        });
+    };
 
-    if (stateValue != "") {
-        filterData = filterData.filter(function (sightingRow) {
-            // need a conditional statement by using a boolean, to display table row
-            if (stateValue === sightingRow.state) { return true; }
-        })
-    }
-    if (countryValue != "") {
-        filterData = filterData.filter(function (sightingRow) {
-            // need a conditional statement by using a boolean, to display table row
-            if (countryValue === sightingRow.country) { return true; }
-        })
-    }
-    if (shapeValue != "") {
-        filterData = filterData.filter(function (sightingRow) {
-            // need a conditional statement by using a boolean, to display table row
-            if (shapeValue === sightingRow.shape) { return true; }
-        })
-    }
-
+    // creat table for data
     createTable(filterData);
 
+};
 
-}
-// call function
+var tableBody = d3.select("tbody");
+// call function for being able to filter table
 createTable(tableData);
 
 // allow filter table button to be referenced by variable & be input
