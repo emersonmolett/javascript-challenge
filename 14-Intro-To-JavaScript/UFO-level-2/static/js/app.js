@@ -1,3 +1,5 @@
+// worked on dedugging syntax errors with tutor. Also worked with t/a to allow filter seach to be usable 
+
 // from data.js
 var tableData = data;
 
