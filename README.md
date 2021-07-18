@@ -1,6 +1,6 @@
 For this assignment, a dataset is analyzed and displayed using JavaScript, HTML, CSS, and D3.js.<br>
 <br>
-Rendering Table: 
+Rendering Table: <br>
 Code is deployed that:
 <li>Produces a table without error</li>
 <li>Table includes all columns</li>
